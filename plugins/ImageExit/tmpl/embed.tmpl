@@ -1,0 +1,16 @@
+<mt:setvarblock name="image_class"><mt:if name="align">class="mt-image-<mt:var name="align">"</mt:if></mt:setvarblock>
+<mt:setvarblock name="image_style"><mt:if name="align" eq="left">style="float: left; margin: 0 20px 20px 0;"</mt:if><mt:if name="align" eq="right">style="float: right; margin: 0 0 20px 20px;"</mt:if><mt:if name="align" eq="center">style="text-align: center; display: block; margin: 0 auto 20px;"</mt:if></mt:setvarblock>
+
+<mt:if name="include">
+<mt:if name="popup">
+<a href="<mt:var name="popup_url">" onclick="window.open('<mt:var name="popup_url">','popup','width=<mt:var name="width">,height=<mt:var name="height">,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><mt:if name="thumb"><img src="<mt:var name="thumb_url">" width="<mt:var name="thumb_width">" height="<mt:var name="height">" alt="<mt:var name="name">" <mt:var name="image_class"> <mt:var name="image_style"> /><mt:else><__trans phrase="View Image"></mt:if></a>
+<mt:else>
+<mt:if name="thumb">
+<a href="<mt:var name="url">"><img alt="<mt:var name="name">" src="<mt:var name="thumb_url">" width="<mt:var name="thumb_width">" height="<mt:var name="thumb_height">" <mt:var name="image_class"> <mt:var name="image_style">/></a>
+<mt:else>
+<img alt="<mt:var name="name">" src="<mt:var name="url">" width="<mt:var name="width">" height="<mt:var name="height">" <mt:var name="image_class"> <mt:var name="image_style">/>
+</mt:if>
+</mt:if>
+<mt:else>
+<a href="<$mt:var name="url"$>"><__trans phrase="View Image">/a>
+</mt:if>
