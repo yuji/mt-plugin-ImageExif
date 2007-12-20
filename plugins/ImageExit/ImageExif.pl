@@ -1,7 +1,7 @@
 # Licence: GPL v2
 #
 # ToDo: Implement dynamic side
-# $id$
+# $Id$
 package MT::Plugin::ImageExif;
 
 use strict;

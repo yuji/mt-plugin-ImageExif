@@ -1,4 +1,4 @@
-#$id$
+#$Id$
 package MT::Asset::Image::ImageEx;
 
 use strict;
