@@ -7,11 +7,11 @@ package MT::Plugin::ImageExif;
 use strict;
 use warnings;
 
-use MT 4.0;
+use MT;
 use MT::Asset::Image::ImageEx;
 
 use base 'MT::Plugin';
-our $VERSION = '0.01';
+our $VERSION = '1.0';
 
 my $plugin = __PACKAGE__->new(
     {
@@ -37,7 +37,7 @@ sub init_registry {
             },
         },
         object_types   => {
-            'asset.exif_image'           => 'MT::Asset::Image::ImageEx',
+            'asset.exif_image' => 'MT::Asset::Image::ImageEx',
         },
     });
 }

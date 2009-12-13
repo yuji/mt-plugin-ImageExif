@@ -4,10 +4,12 @@ package MT::Asset::Image::ImageEx;
 use strict;
 use base qw( MT::Asset::Image );
 
-use MT 4.0;
+use MT;
 use Image::ExifTool qw(:Public);
 
-__PACKAGE__->install_properties( { class_type => 'image', } );
+__PACKAGE__->install_properties({
+    class_type => 'image',
+});
 
 sub extensions { [ qr/gif/i, qr/jpe?g/i, qr/png/i, ] }
 
@@ -28,7 +30,6 @@ sub has_exifinfo {
 sub get_exifinfo {
     my $asset = shift;
     my ($param) = @_;
-
     return '' unless $param->{tag};
     my $cache_prop = $asset->_read_info();
     $cache_prop->{ $param->{tag} } || '';
